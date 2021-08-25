@@ -14,6 +14,10 @@ export class UsersService {
   }
 
   findOne(id: number) {
+    //If we are signed out, this is called with null or undefined, it returns a user
+    if (!id) {
+      return null;
+    }
     return this.repo.findOne(id);
   }
 
