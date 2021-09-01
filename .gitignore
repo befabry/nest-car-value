@@ -1,5 +1,10 @@
+#.env
+.env.development
+.env.test
+
 #SQLite instance
 db.sqlite
+test.sqlite
 
 # compiled output
 /dist
