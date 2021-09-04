@@ -1,12 +1,30 @@
+@make = toyota
+@model = corolla
+@year = 1990
+@mileage = 100000
+@lng = 0
+@lat = 0
+@price = 5000
+@report_id = 1
+
+### Create a report
 POST http://localhost:3000/reports
 Content-Type: application/json
 
 {
-    "make":"toyota",
-    "model": "corolla",
-    "year": 1980,
-    "mileage": 100000,
-    "lng": 0,
-    "lat": 0,
-    "price": 500000
+    "make":"{{model}}",
+    "model": "{{make}}",
+    "year": {{year}},
+    "mileage": {{mileage}},
+    "lng": {{lng}},
+    "lat": {{lat}},
+    "price": {{price}}
+}
+
+### Approve an existing report
+PATCH http://localhost:3000/reports/{{report_id}}
+Content-Type: application/json
+
+{
+    "approved": true
 }

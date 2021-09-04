@@ -27,6 +27,9 @@ export class ReportDto {
   @Expose()
   lat: number;
 
+  @Expose()
+  approved: boolean;
+
   @Transform(({ obj }: { obj: Report }) => obj.user.id)
   @Expose()
   userId: number;
