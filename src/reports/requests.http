@@ -30,4 +30,10 @@ Content-Type: application/json
 }
 
 ### Get an estimate for an existing vehicle
-GET http://localhost:3000/reports?make={{make}}&model={{model}}&lng={{lng}}&lat={{lat}}&mileage={{mileage}}&year={{year}}
+GET http://localhost:3000/reports
+    ?make={{make}}
+    &model={{model}}
+    &lng={{lng}}
+    &lat={{lat}}
+    &mileage={{mileage}}
+    &year={{year}}
