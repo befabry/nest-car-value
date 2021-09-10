@@ -6,8 +6,11 @@ import {
   IsLongitude,
   IsLatitude,
 } from 'class-validator';
+import { IReport } from '../report.entity';
 
-export class CreateReportDto {
+export class CreateReportDto
+  implements Omit<IReport, 'id' | 'approved' | 'user'>
+{
   @IsString()
   make: string;
 

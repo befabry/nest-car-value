@@ -1,8 +1,7 @@
 import { Expose, Transform } from 'class-transformer';
-import { User } from 'src/users/user.entity';
-import { Report } from '../report.entity';
+import { IReport } from '../report.entity';
 
-export class ReportDto {
+export class ReportDto implements Omit<IReport, 'user'> {
   @Expose()
   id: number;
 
@@ -30,7 +29,7 @@ export class ReportDto {
   @Expose()
   approved: boolean;
 
-  @Transform(({ obj }: { obj: Report }) => obj.user.id)
+  @Transform(({ obj }: { obj: IReport }) => obj.user.id)
   @Expose()
   userId: number;
 }

@@ -9,8 +9,16 @@ import {
 } from 'typeorm';
 import { Report } from 'src/reports/report.entity';
 
+export interface IUser {
+  id: number;
+  email: string;
+  password: string;
+  admin: boolean;
+  reports: Report[];
+}
+
 @Entity()
-export class User {
+export class User implements IUser {
   @PrimaryGeneratedColumn()
   id: number;
 

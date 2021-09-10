@@ -7,8 +7,11 @@ import {
   IsLatitude,
 } from 'class-validator';
 import { Transform, TransformFnParams } from 'class-transformer';
+import { IReport } from '../report.entity';
 
-export class GetEstimateDto {
+export class GetEstimateDto
+  implements Omit<IReport, 'id' | 'approved' | 'user' | 'price'>
+{
   @IsString()
   make: string;
 
