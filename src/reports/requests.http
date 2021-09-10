@@ -12,8 +12,8 @@ POST http://localhost:3000/reports
 Content-Type: application/json
 
 {
-    "make":"{{model}}",
-    "model": "{{make}}",
+    "make":"{{make}}",
+    "model": "{{model}}",
     "year": {{year}},
     "mileage": {{mileage}},
     "lng": {{lng}},
