@@ -11,6 +11,7 @@ import { CurrentUserMiddleware } from './middlewares/current-user.middleware';
 //APP_INTERCEPTOR applies a global scope for the CurrentUserInterceptor
 //Kept as an example of how tu Use Interceptors
 @Module({
+  imports: [TypeOrmModule.forFeature([User])],
   controllers: [UsersController],
   providers: [
     UsersService,
@@ -20,7 +21,6 @@ import { CurrentUserMiddleware } from './middlewares/current-user.middleware';
     //   useClass: CurrentUserInterceptor,
     // },
   ],
-  imports: [TypeOrmModule.forFeature([User])],
 })
 export class UsersModule {
   configure(consumer: MiddlewareConsumer) {
