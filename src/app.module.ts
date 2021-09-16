@@ -44,12 +44,14 @@ const cookieSession = require('cookie-session');
   ],
 })
 export class AppModule {
+  constructor(private configServcie: ConfigService) {}
+
   configure(consumer: MiddlewareConsumer) {
     //globally scoped middleware
     consumer
       .apply(
         cookieSession({
-          keys: ['sadhazjkhda'],
+          keys: [this.configServcie.get('COOKIE_KEY')],
         }),
       )
       .forRoutes('*');
